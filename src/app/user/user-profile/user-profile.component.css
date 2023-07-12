@@ -1,0 +1,142 @@
+
+*{
+    font-family: 'Nunito', sans-serif;
+    /* margin:0; padding:0; */
+    box-sizing: border-box;
+    /* outline: none; border:none; */
+    text-decoration: none;
+    /* transition: all .2s linear; */
+    text-transform: capitalize;
+    
+  
+ 
+ }
+ 
+ html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+ }
+ 
+ body{
+    background: #eee;
+    height:auto;
+ 
+ }
+
+
+ .mat-success{
+	color: white;
+	background-color: green;
+}
+
+.mat-danger{
+	color: white;
+	background-color: red;
+}
+ 
+ /* .container{
+    
+    margin:0 auto;
+    padding:3rem 2rem;
+    
+ } */
+ 
+ .container .title{
+    font-size: 3.5rem;
+    color:#d51d1d;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: 50px;
+ }
+ 
+ .container .products-container{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); */
+    gap:10rem;
+    margin-left: 50px;
+    /* height: 10px;
+    width: 10px; */
+ }
+ 
+ .container .products-container .product{
+    text-align: center;
+    padding:3rem 2rem;
+    /* background: #8d6be392; */
+    background: rgb(34,193,195);
+ background: linear-gradient(0deg, rgba(34,193,195,1) 21%, rgba(126,190,132,1) 30%, rgba(253,187,45,1) 97%);
+    /* box-shadow: 0 .5rem 1rem rgba(0,0,0,.1); */
+    /* outline: .1rem solid #ccc; */
+    outline-offset: -1.5rem;
+    cursor: pointer;
+    width: 50vh;
+    margin-top: 20px;
+    margin-left: 600px;
+    
+ 
+ 
+ }
+ 
+ .container .products-container .product:hover{
+    /* outline: .2rem solid #222; */
+    outline-offset: 0;
+ }
+ 
+ .container .products-container .product img{
+    height: 10rem;
+ }
+ 
+ .container .products-container {
+    transform: scale(.9);
+ }
+ 
+ /* .container .products-container .product h3 tr{
+    padding:.5rem 0;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+ } */
+ 
+ .container .products-container {
+    
+    text-align: center;
+    margin: auto;
+    display: flex;
+  
+ }
+ 
+ .container .products-container .product .price p tr{
+    font-size: 1rem;
+    color:blue;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    font-size: 18px;
+ }
+ .container  col-lg-5{
+  margin-left:140px;
+ }
+ 
+ button{
+  color: #bf1919;
+  margin-top: 20px;
+  width: 200px;
+ }
+ 
+ h1{
+  text-align: center;
+  color: #d51d1d;
+ }
+ 
+ tr h3{
+  text-align: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+ }
+ img{
+    background-color: #bf1919;
+    border-radius: 80%;
+ }

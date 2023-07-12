@@ -1,0 +1,132 @@
+
+<!-- <table  border="1">
+    <tr><th>Id</th><th>User Name</th><th>emailId</th><th>Contact No.</th><th>Gender </th><th>Skills</th>
+    <th>Location Name </th><th>Education</th><th>CGPA Scored</th> <th>Passed Year </th><th>Experience</th><th>Present CTC</th> <th>Languages</th><th>Major/Not</th> <th>Withdraw Application</th></tr>
+    <tr *ngFor="let user of allAppliedData">
+
+        <td>{{user.applicationId}}</td> 
+        <td>{{user.userName }}</td> 
+        <td>{{user.emailId }}</td> 
+        <td>{{user.contactNum}}</td>
+        <td>{{user.gender }}</td>
+        <td>{{user.skills  }}</td>
+        <td>{{user.locationName  }}</td>
+        <td>{{user.educational_details }}</td>
+        <td>{{user.cgpaScored }}</td>
+        <td>{{user.passedYear  }}</td>
+        <td>{{user.experience_details  }}</td>
+        <td>{{user.presentCtc }}</td>
+        <td>{{user.languages }}</td>
+        <td>{{user.age_Major }}</td>
+
+        <td>
+            <button (click)="deleteApplication(user.applicationId)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+            </svg>
+            </button>
+        </td>
+    </tr>
+</table> -->
+
+
+
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+    <h1>View Applied Jobs</h1>
+
+    <form >
+        <div class="form-group">
+            <!-- <label for="exampleInputEmail1" >Search </label> -->
+            <input type="text" [(ngModel)]="term" name="term" class="form-cntrol" placeholder="Search ">
+        </div>
+    </form>
+
+    <a class="container  col-lg-5 ">
+        <tr *ngFor="let user of allAppliedData | filter:term ">
+         
+ 
+            <a class="products-container ">
+        
+            <a class="product  " data-name="p-1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSosrx32-RJwAq5SyIuDbjiaTbyZjAFPjMIJw&usqp=CAU" alt="">
+                
+                
+                <h3 > <tr class="ss"> User Name:{{user.userName }}</tr> </h3><br>
+                <div class="price">
+                    <p>
+                        <tr>Application Id:{{user.applicationId}}</tr> 
+                        <tr>EmailId: {{user.emailId }}</tr> 
+                        <tr>Contact:{{user.contactNum}}</tr>
+                        <tr>Gender:{{user.gender }}</tr>
+                        <tr>Skills:{{user.skills  }}</tr>
+                        <td>Location:{{user.locationName}}</td>
+                        <tr>Education:{{user.educational_details }}</tr>
+                        <tr>CGPA:{{user.cgpaScored }}</tr>
+                        <tr>Passed Out:{{user.passedYear  }}</tr>
+                        <tr>Experience:{{user.experience_details  }}</tr>
+                        <tr>CTC:{{user.presentCtc }}</tr>
+                        <tr>Languages:{{user.languages }}</tr>
+                        <tr>Major:{{user.age_Major }}</tr>
+                    </p>      
+                </div><br>
+                
+                <button (click)="deleteApplication(user.applicationId)"  class="fa fa-trash-o"  style="font-size:24px" mat-raised-button color="success"> Delete</button>
+                <button (click)="updateApplication(user)"  class="fa fa-check"  style="font-size:24px" mat-raised-button color="success"> Selected </button>
+                <button (click)="rejectApplication(user)"  class="fa fa-close"  style="font-size:24px" mat-raised-button color="success"> Rejected </button>
+
+                
+            </a>
+            </a>
+        </tr>
+    </a>
+ </body>
+
+<!-- 
+
+<body>
+    <h2>View Applied Users</h2>
+    <a class="container  col-lg-5 ">
+        <tr *ngFor="let user of allAppliedData">
+         
+ 
+            <a class="products-container ">
+        
+            <a class="product  " data-name="p-1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSosrx32-RJwAq5SyIuDbjiaTbyZjAFPjMIJw&usqp=CAU" alt="">
+                
+                
+                <h3 > <tr class="ss"> User Name:{{user.userName }}</tr> </h3><br>
+                <div class="price">
+                        <p>
+                            <tr>{{user.applicationId}}</tr> 
+                            <tr>{{user.emailId }}</tr> 
+                            <tr>{{user.contactNum}}</tr>
+                            <tr>{{user.gender }}</tr>
+                            <tr>{{user.skills  }}</tr>
+                            <td>{{user.locationName  }}</td>
+                            <tr>{{user.educational_details }}</tr>
+                            <tr>{{user.cgpaScored }}</tr>
+                            <tr>{{user.passedYear  }}</tr>
+                            <tr>{{user.experience_details  }}</tr>
+                            <tr>{{user.presentCtc }}</tr>
+                            <tr>{{user.languages }}</tr>
+                            <tr>{{user.age_Major }}</tr>
+                        </p>      
+                </div><br>
+                <td><button (click)="deleteApplication(user.applicationId)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                        </svg>
+                </button></td><br>
+            </a>
+            </a>
+        </tr>
+    </a>
+ </body> -->

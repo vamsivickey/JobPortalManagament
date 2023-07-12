@@ -1,0 +1,92 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+    <h1>Update Profile</h1>
+    <a class="container  col-lg-5 ">
+         
+ 
+            <a class="products-container ">
+        
+            <a class="product  " data-name="p-1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSosrx32-RJwAq5SyIuDbjiaTbyZjAFPjMIJw&usqp=CAU" alt="">
+                
+                
+                <h3 > <tr class="ss"> User Name: {{ currentUser.userName }} </tr> </h3><br>
+                <div class="price">
+                    <p>
+                        <tr>Email ID: {{ currentUser.companyEmail }}</tr>
+                        <tr>Company Name: {{ currentUser.companyName }}</tr>
+                        <tr>Contact Number: {{ currentUser.contactNum }}</tr>         
+                        <tr>Company Address: {{ currentUser.companyLocation }}</tr> 
+                    </p>      
+                </div><br>
+                   
+                <button (click)="showEditPopup(currentUser)" class="fa fa-edit" style="font-size:24px" mat-raised-button color="success">edit</button><br>
+                    
+            </a>
+            </a>
+    </a>
+ </body>
+
+
+
+
+
+
+<!-- <table align="center" border="4">
+<tr><th>Name</th><th>password</th><th>Company Name</th><th>Company Location</th>
+<th>Contact Number </th><th colspan="2">Actions</th></tr>
+<tr *ngFor="let currentUserData of allCompines"> -->
+    <!-- <td>{{currentUserData.companyId}}</td>  -->
+    <!-- <td>{{currentUserData.userName }}</td>  -->
+    <!-- <td>{{currentUserData.emailId }}</td>  -->
+    <!-- <td>{{currentUserData.password }}</td> 
+    <td>{{currentUserData.companyName  }}</td>
+    <td>{{currentUserData.companyLocation }}</td>
+    <td>{{currentUserData.contactNum}}</td>
+     <td><button (click)="deleteCompany(currentUserData.companyId)"><div class="glyphicon glyphicon-trash"></div></button></td>
+     <td><button (click)="showEditPopup(currentUserData)"><div class="glyphicon glyphicon-pencil"></div></button></td>
+</tr>
+</table> -->
+
+
+
+<div class="container">
+    <div class="modal fade" id="companyModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h4 class="modal-title">Update Form</h4>
+                    <span class="close" data-dismiss="modal">&times;</span>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-group">
+                        <!-- Enter Company Id: <input type="number" name="companyId" [(ngModel)]="editCompany.companyId"
+                            class="form-control"><br /> -->
+                        Enter User Name: <input type="text" name="userName" [(ngModel)]="editCompany.userName"
+                            class="form-control"><br />
+                        Enter Email: <input type="email" name="emailId" disabled [(ngModel)]="editCompany.companyEmail"
+                            class="form-control"><br />
+                        <!-- Enter Password: <input type="text" name="password" [(ngModel)]="editCompany.password"
+                            class="form-control"><br /> -->
+                        Enter Company Name: <input type="text" name="companyName" [(ngModel)]="editCompany.companyName"
+                            class="form-control"><br />
+                        Enter Company Location: <input type="text" name="companyLocation" [(ngModel)]="editCompany.companyLocation"
+                            class="form-control"><br />
+                        Enter contact Number : <input type="number" name="contactNum" [(ngModel)]="editCompany.contactNum"
+                            class="form-control"><br />
+                    </form>
+
+                    
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateCompany()" data-dismiss="modal" mat-raised-button color="success">Update</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+ 

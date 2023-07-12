@@ -1,0 +1,198 @@
+<div class="dwr-registration"> 
+    <div class =" container-fluid">
+    <div class="dwr-registration__inner-content"> 
+    <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="dwr-registration__form-wrap">
+    <h2 class="text-center"> Company Registration</h2>
+    <div class ="registration-form">
+      <form   action="/action_page.php" class="was-validated"
+      #regForm="ngForm" (ngSubmit)="register(regForm.value)"  >
+
+      <div class="mb-3 mt-3">
+        <label for="uname" class="form-label">User Name:</label>
+        <input type="text" class="form-control"  placeholder="Enter username" name="userName" required ngModel>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Id:</label>
+        <input type="text" class="form-control" placeholder="Enter email" name="companyEmail" required ngModel>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="mb-3">
+        <label for="pwd" class="form-label">Password:</label>
+        <input type="password" class="form-control" placeholder="Enter password" name="password" required ngModel>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="location" class="form-label">Company Location:</label>
+        <input type="text" class="form-control"  placeholder="Enter location" name="companyLocation" required ngModel>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="mb-3">
+        <label for="company" class="form-label">Company Name:</label>
+        <input type="text" class="form-control"  placeholder="Enter companyname" name="companyName" required ngModel>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="mb-3">
+        <label for="contact" class="form-label">Contact Number:</label>
+        <input type="text" class="form-control"  placeholder="Enter mobile no" name="contactNum" required ngModel>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+
+      <!-- <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required >
+        <label class="form-check-label" for="myCheck">I agree all terms and conditions</label>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Check this checkbox to continue.</div> -->
+    <!-- </div> -->
+
+      <button [disabled]="regForm.invalid" class="btn btn-primary" mat-raised-button color="success">Register</button>
+
+<div class="text-center">Already have an account? <a routerLink="/compLogin">Login here</a></div>
+</form>
+
+
+
+<!-- <body>
+    
+    <div class="signup-form">
+        
+        <form action="/examples/actions/confirmation.php" method="post" #regForm="ngForm" (ngSubmit)="register(regForm.value)">
+            <h2>EMPLOYER SIGN UP</h2>
+            <p>Please fill in this form to create an Employer account!</p>
+            <hr>
+
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <span class="fa fa-user"></span>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" id="userName" name="userName" placeholder="User Name" minlength="5" required ngModel #companyUser="ngModel">
+                </div>
+                
+                <div *ngIf="companyUser.errors?.required && (companyUser.dirty || companyUser.touched)" class="alert alert-danger"> Username is required. </div>
+                <div *ngIf="companyUser.errors?.['minlength'] && companyUser.touched" class="alert alert-danger">Please Enter Min 5 Characters</div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <input type="email" class="form-control" id="emailId" name="emailId" placeholder="Email Address" minlength="11"  required ngModel #emailId="ngModel">
+                </div>
+                
+                    <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="alert alert-danger">Email must be a valid email address.</div>
+                    <div *ngIf="emailId.errors?.['minlength'] && emailId.touched" class="alert alert-danger"></div>
+                    <div *ngIf="emailId.errors?.required">  </div>
+                    <div *ngIf="emailId.errors?.email"> Email must be a valid email address.</div>
+                
+
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-key" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                   <input type="password" class="form-control" name="password" id="password" placeholder="Password" required ngModel #password="ngModel">
+                 </div>
+                
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger"> Please Enter Min 8 Characters </div>
+                    <div *ngIf="password.errors?.required">  </div>
+               
+
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-building" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name" minlength="5" required ngModel #companyName="ngModel">
+                </div>
+                
+                <div *ngIf="companyName.errors?.required && (companyName.dirty || companyName.touched)" class="alert alert-danger"> company Name is required. </div>
+                <div *ngIf="companyName.errors?.['minlength'] && companyName.touched" class="alert alert-danger">Please Enter Min 5 Characters</div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" id="companyLocation" name="companyLocation" placeholder="Company Location" required ngModel #companyLocation="ngModel">
+                </div>
+                
+                <div *ngIf="companyLocation.errors?.required && (companyLocation.dirty || companyLocation.touched)" class="alert alert-danger"> Head Quarters is required. </div>
+                <div *ngIf="companyLocation.errors?.['minlength'] && companyLocation.touched" class="alert alert-danger">Please Enter Min 5 Characters</div>
+
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <input type="tel" class="form-control" name="contactNum" id="mobileNum" pattern="[0-9]{10}" placeholder="Mobile Number" required ngModel #mobileNum="ngModel" >
+                </div>                
+                <div *ngIf="mobileNum.invalid && (mobileNum.dirty || mobileNum.touched)" class="alert alert-danger">
+                    <div *ngIf="mobileNum.errors?.required">  Mobile number is required. </div>
+                    <div *ngIf="mobileNum.errors?.pattern">  Mobile number must be a 10 digit number. </div>
+                </div>
+
+            </div>
+
+            
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg" >Sign Up</button>
+                </div>
+
+
+        </form>
+        <div class="text-center">Already have an account? <a routerLink="/compLogin">Login here</a></div>
+    </div>
+
+</body> -->
+
+
+            <!-- companyUser,companyName,headquarters,emailId,password,mobileNum,description -->
+
+            <!-- <div class="form-group">
+                <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a
+                        href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+            </div> -->
+

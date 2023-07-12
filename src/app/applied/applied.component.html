@@ -1,0 +1,86 @@
+<div>
+    <h1>
+        List of Jobs Applied 
+    </h1>
+</div>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- 
+<body>
+    <h1>View Applied Jobs</h1>
+
+
+
+    <a class="container  col-lg-5 ">
+        <tr *ngFor="let user of allAppliedData  ">
+         
+ 
+            <a class="products-container ">
+        
+            <a class="product  " data-name="p-1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSosrx32-RJwAq5SyIuDbjiaTbyZjAFPjMIJw&usqp=CAU" alt="">
+                
+                
+                <h3 > <tr class="ss"> User Name:{{user.userName }}</tr> </h3><br>
+                <div class="price">
+                    <p>
+                        <tr>Application Id:{{user.applicationId}}</tr> 
+                        <tr>EmailId: {{user.emailId }}</tr> 
+                        <tr>Contact:{{user.contactNum}}</tr>
+                        <tr>Gender:{{user.gender }}</tr>
+                        <tr>Skills:{{user.skills  }}</tr>
+                        <td>Location:{{user.locationName}}</td>
+                        <tr>Education:{{user.educational_details }}</tr>
+                        <tr>CGPA:{{user.cgpaScored }}</tr>
+                        <tr>Passed Out:{{user.passedYear  }}</tr>
+                        <tr>Experience:{{user.experience_details  }}</tr>
+                        <tr>CTC:{{user.presentCtc }}</tr>
+                        <tr>Languages:{{user.languages }}</tr>
+                        <tr>Major:{{user.age_Major }}</tr>
+                    </p>      
+                </div><br>
+                
+                <button (click)="deleteApplication(user.applicationId)"  class="fa fa-trash-o"  style="font-size:24px" mat-raised-button color="success"> Delete</button> -->
+                <!-- <button (click)="updateApplication(user)"  class="fa fa-check"  style="font-size:24px" mat-raised-button color="success"> Selected </button>
+                <button (click)="rejectApplication(user)"  class="fa fa-close"  style="font-size:24px" mat-raised-button color="success"> Rejected </button> -->
+
+<!--                 
+            </a>
+            </a>
+        </tr>
+    </a>
+ </body> -->
+
+
+ <table  class="table table-bordered">
+    <tr>
+        <th>Id</th><th>User Name</th><th>emailId</th><th>Contact No.</th><th>Gender </th><th>Skills</th>
+        <th>Education</th><th>CGPA Scored</th> <th>Experience</th><th>Present CTC</th> <th>Major/Not</th> <th>Withdraw</th>
+    </tr>
+
+    <tr *ngFor="let user of allAppliedData">
+
+        <td>{{user.applicationId}}</td> 
+        <td>{{user.userName }}</td> 
+        <td>{{user.emailId }}</td> 
+        <td>{{user.contactNum}}</td>
+        <td>{{user.gender }}</td>
+        <td>{{user.skills  }}</td>
+        <td>{{user.educational_details }}</td>
+        <td>{{user.cgpaScored }}</td>
+        <td>{{user.experience_details  }}</td>
+        <td>{{user.presentCtc }}</td>
+        <td>{{user.age_Major }}</td>
+
+        <td>
+            <button (click)="deleteApplication(user.applicationId)"><i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
+        </td>
+    </tr>
+
+</table>
+
+
+
+
+

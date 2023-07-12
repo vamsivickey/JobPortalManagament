@@ -1,0 +1,105 @@
+.dwr-registration {
+	font-family: 'Roboto', sans-serif;
+	
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6X4PMSI8Hvz3gztYxr_va4jrZbofuQlbD6Xqr_Rn0_Ip8G6PSa1s3N1qwiHfW5oh6FzU&usqp=CAU');
+	 background-size: cover;
+	 background-position: center;
+	 background-repeat: no-repeat;
+	 position: relative;
+	 padding: 50px 0;
+	 /* height: 200vh; */
+	}
+	
+	.dwr-registration:after { 
+		 position: absolute; 
+		 content:"";
+		  background: #000; 
+		  left: 0;
+		   right: 0; 
+		   bottom: 0;
+		   top: 0;
+		 opacity: 0.6;
+		}
+	
+	
+	/* .dwr-registration--image img{ 
+		width: 100%;
+	
+	} */
+	 .dwr-registration h2 {
+	color: #31acf4;
+	font-size: 42px;
+	margin-bottom: 50px;
+	font-weight: bold;
+	}
+	
+	.dwr-registration__form-wrap { 
+		z-index: 99;
+		position: relative;
+		background: #fff;
+		 max-width: 500px;
+		 margin:0 auto;
+		  padding: 30px;
+		   border-radius: 15px;
+	}
+	.dwr-registration  input{
+		border: 1px solid #7262d2 !important;
+		box-shadow: none;
+		height: 45px;
+		transition: 0.3s linear all;
+		border-radius: 35px;
+			}
+	
+	.dwr-registration textarea{ 
+	   border: 1px solid #bababa !important;
+	   box-shadow: none;
+	   transition: 0.35 linear all;
+	   border-radius: 35px;
+	
+	} 
+	.dwr-registration input:focus,
+	.dwr-registration textarea:focus{ 
+	   box-shadow: none;
+		border-bottom: 2px solid #0b0b0b !important;
+		 transition: 0.3s linear all;
+	
+	} 
+	.dwr-registration button {
+		border: 0;
+		 background: #8ac3df;
+		 border-radius: 40px; 
+		 color: #fff;
+		  padding: 10px 31px;
+		   transition: 0.35 Linear all;
+		   margin-left: 35%;
+		   margin-bottom: 5%;
+		}
+	
+	.dwr-registration button:hover { 
+	   background: #5f7c9f; 
+	   color: #ffffff;
+		transition: 0.3s Linear all;
+	}
+	@media only screen and (max-width: 992px) {
+		.dwr-registration__form-wrap{
+			padding: 20px;
+	
+	}
+	
+	.dwr-registration{ 
+	   height: 100%;
+	
+	}
+	
+	}
+
+
+.mat-success{
+	color: white;
+	background-color: green;
+}
+
+.mat-danger{
+	color: white;
+	background-color: red;
+}

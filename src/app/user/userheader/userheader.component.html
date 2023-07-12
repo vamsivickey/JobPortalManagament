@@ -1,0 +1,164 @@
+<header >
+    <!-- *ngIf="header.visible" -->
+    <!-- Header Start -->
+    <div class="header-area header-transparrent">
+        <div class="headder-top header-sticky">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-2">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <!-- <a routerLink="/"><img src="assets\img\logo\L S 3.jpg" alt=""></a> -->
+                            <!-- <a routerlink="/"><img src="assets/img/logo/logo.png" alt=""></a> -->
+
+                        </div>
+                       
+                    </div>
+                    <div class="col-lg-12 col-md-9">
+                        <div class="menu-wrapper">
+                            <!-- Main-menu -->
+                            <div class="main-menu">
+                                <nav class="d-none d-lg-block">
+                                    <ul id="navigation">
+                                        <li><a routerLink="/userheader">Home</a></li>
+
+                                        <li><a routerLink="/userheader/job-list">Find Job </a></li>
+                                        <li><a routerLink="/userheader/viewAppliedUsers"> View Applied Jobs </a></li>
+                                        <li><a routerLink="manageUser"> Manage Profile </a></li>
+
+                                        <!-- <li><a routerLink="/about">About</a></li> -->
+                                        <li><a routerLink="/contact">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- Header-btn -->
+                            <div class="header-btn d-none f-right d-lg-block">
+                                <!-- <a routerLink="/register" class="btn head-btn1">Register</a> -->
+                                
+                                <!-- <a routerLink="/login" class="btn head-btn2">User Login</a> 
+                                
+                                <a routerLink="/compLogin" class="btn head-btn1">Post Job</a> -->
+
+                                <a routerLink="/login" class="btn head-btn1" (click)="logoutSubmit()">Logout</a>
+                                <!-- <a routerLink="/compRegister" class="btn head-btn2">Post Job</a> -->
+                            </div>
+
+                           
+                        </div>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+</header>
+
+
+
+
+<!-- slider Area Start-->
+<div class="slider-area ">
+    <!-- Mobile Menu -->
+    <div class="slider-active">
+        <div class="single-slider slider-height d-flex align-items-center"
+            style="background-image: url(../../../../assets/img/hero/h1_hero.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-9 col-md-10">
+                        <div class="hero__caption">
+                            <h1>Get Your Dream Job</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- Search Box -->
+                <div class="row">
+                    <div class="col-xl-8">
+                        <!-- form -->
+                        <form action="#" class="search-box">
+                            <div class="input-form">
+                                <input type="text" placeholder="Job Tittle or keyword">
+                            </div>
+                            <!-- <div class="select-form">
+                                <div class="select-itms">
+                                    <select name="select" id="select1">
+                                        <option value="">Location BD</option>
+                                        <option value="">Location PK</option>
+                                        <option value="">Location US</option>
+                                        <option value="">Location UK</option>
+                                    </select>
+                                </div>
+                            </div> -->
+                            <!-- <div class="search-form">
+                                <a href="#">Find job</a>
+                            </div> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- slider Area End-->
+
+
+
+
+<!-- How  Apply Process Start-->
+<div class="apply-process-area apply-bg pt-150 pb-150"
+    style="background-image: url(../../../../assets/img/gallery/how-applybg.png)">
+    <div class="container">
+        <!-- Section Tittle -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-tittle white-text text-center">
+                    <span>Apply process</span>
+                    <h2> How it works</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Apply Process Caption -->
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-process text-center mb-30">
+                    <div class="process-ion">
+                        <span class="flaticon-search"></span>
+                    </div>
+                    <div class="process-cap">
+                        <h5>1. Search a job</h5>
+                        <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut
+                            laborea.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-process text-center mb-30">
+                    <div class="process-ion">
+                        <span class="flaticon-curriculum-vitae"></span>
+                    </div>
+                    <div class="process-cap">
+                        <h5>2. Apply for job</h5>
+                        <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut
+                            laborea.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-process text-center mb-30">
+                    <div class="process-ion">
+                        <span class="flaticon-tour"></span>
+                    </div>
+                    <div class="process-cap">
+                        <h5>3. Get your job</h5>
+                        <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut
+                            laborea.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- How  Apply Process End-->

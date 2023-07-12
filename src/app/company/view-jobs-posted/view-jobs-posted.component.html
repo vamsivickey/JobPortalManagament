@@ -1,0 +1,225 @@
+
+
+<!-- <table align="center" border="2">
+
+    <tr><th>Job Id</th><th>Application Date</th><th>Application Deadline</th><th>Category Name</th><th>Description</th><th>Email Id</th>
+    <th> Experience Details </th> <th> Job Location </th> <th> Job Title </th> <th> Job Type </th> <th> Educational Details </th><th> Vacancies </th>
+     <th> Salary Range </th>  <th> Skills Required </th> <th colspan="2">Actions</th> </tr>
+
+    <tr *ngFor="let job of JobsList">
+        <td>{{job.jobId}}</td> 
+        <td>{{job.applicationDate }}</td> 
+        <td>{{job.applicationDeadline }}</td> 
+        <td>{{job.categoryName }}</td> 
+        <td>{{job.description  }}</td>
+        <td>{{job.emailId }}</td>
+        <td>{{job.experience_details}}</td>
+        <td>{{job.jobLocation}}</td> 
+        <td>{{job.jobTitle }}</td> 
+        <td>{{job.jobType }}</td> 
+        <td>{{job.min_Educational_req }}</td> 
+        <td>{{job.noOfVacancies  }}</td>
+        <td>{{job.salaryRange }}</td>
+        <td>{{job.skillsRequired}}</td>
+         <td>
+            <button (click)="deleteCompany(job.jobId)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                </svg>
+            </button>
+        </td>
+         <td>
+            <button (click)="showEditPopup(job)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                </svg>
+            </button>
+        </td>
+    </tr>
+
+</table> -->
+
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+  
+    <h1>View Posted Jobs</h1>
+
+    <form >
+        <div class="form-group">
+            <!-- <label for="exampleInputEmail1" >Search </label> -->
+            <input type="text" [(ngModel)]="term" name="term" class="form-cntrol" placeholder="Search Keyword or Title">
+        </div>
+    </form>
+    
+    <a class="container  col-lg-5 ">
+        <tr *ngFor="let job of JobsList | filter:term ">
+         
+ 
+            <a class="products-container ">
+        
+            <a class="product  " data-name="p-1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSosrx32-RJwAq5SyIuDbjiaTbyZjAFPjMIJw&usqp=CAU" alt="">
+                
+                
+                <h3 > <tr class="ss"> Title:{{ job.jobTitle }}</tr> </h3><br>
+                <div class="price">
+                        <p>
+                            <tr >Salary     :{{ job.companyName }}</tr>
+                            <tr >Salary     :{{ job.salaryRange }}</tr>
+                            <tr>Description:{{ job.description  }}</tr>
+                            <tr>Location   :{{ job.jobLocation }}</tr> 
+                            <tr>Experience :{{job.experience_details}}</tr>         
+                            <tr>Job Type   :{{job.jobType }}</tr> 
+                            <tr>Skills     :{{job.skillsRequired}}</tr>
+                            <tr>Vacancies  :{{job.noOfVacancies  }}</tr> 
+                            <!-- <tr>Posted date :{{job.applicationDate }}</tr>  -->
+                            
+                        </p>      
+                </div><br>
+                   
+                <button (click)="deleteCompany(job.jobId)"  class="fa fa-trash-o"  style="font-size:24px" mat-raised-button color="success"> Delete</button>
+                    <button (click)="showEditPopup(job)" class="fa fa-edit" style="font-size:24px" mat-raised-button color="success">Edit</button><br>
+                       
+               
+                    
+            </a>
+            </a>
+        </tr>
+    </a>
+ </body>
+
+
+
+
+
+
+
+
+<!-- <div  *ngFor="let job of JobsList">
+<div class="job-card">
+    <div class="job-card-details" >
+      <h2>Job Title: {{ job.jobTitle }}</h2>
+      <p>Job Category: {{ job.categoryName }}</p>
+      <p>Job Location :{{ job.jobLocation }}</p>
+      <p> Salary Range :{{job.salaryRange }}</p>
+      <p>job Description :{{ job.description }}</p>
+      <p>Application Date:{{job.applicationDate }}</p> 
+      <p>Application Deadline:{{job.applicationDeadline }}</p>
+      <p>Experience: {{job.experience_details}}</p>
+      <p>Job Type:{{job.jobType }}</p>
+      <p>Education: {{job.min_Educational_req }}</p>
+      <p>Skills Required: {{job.skillsRequired}}</p>
+      <a routerLink="/applyJob"  class="job-card-button">Apply</a>
+       <div class="job-card-apply">
+        <a routerLink="/applyJob"  class="job-card-button">Apply</a>
+      </div> 
+
+    </div>
+</div>
+</div> -->
+
+
+
+            <!-- Right content -->
+            <!-- <div class="col-xl-9 col-lg-9 col-md-8"> -->
+                <!-- Featured_job_start -->
+                <!-- <section class="featured-job-area">
+                    <div class="container"> -->
+                        <!-- Count of Job list Start -->
+                        <!-- <div class="row">
+                            <div class="col-lg-12">
+                                <div class="count-job mb-35">
+                                    <span>39, 782 Jobs found</span> -->
+                                    
+                                    
+                        <!-- single-job-content -->
+                        <!-- <div class="single-job-items mb-30">
+                            <div class="job-items">
+                                <div class="company-img">
+                                    <a href="#"><img src="assets/img/icon/job-list4.png" alt=""></a>
+                                </div>
+                                <div class="job-tittle job-tittle2">
+                                    <a routerLink="/userheader">
+                                        <h4>Digital Marketer</h4>
+                                    </a>
+                                    <ul>
+                                        <li>Creative Agency</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
+                                        <li>$3500 - $4000</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="items-link items-link2 f-right">
+                                <a routerLink="/job-details">Full Time</a>
+                                <span>7 hours ago</span>
+                            </div>
+                        </div>
+
+
+                    </div> -->
+                <!-- </section> -->
+                <!-- Featured_job_end -->
+
+
+
+
+
+<div class="container">
+    <div class="modal fade" id="jobModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h4 class="modal-title">Update Form</h4>
+                    <span class="close" data-dismiss="modal">&times;</span>
+                </div>
+
+                <div class="modal-body">
+                    <form class="form-group">
+                        
+                        Enter Company Name: <input type="text" name="companyName" [(ngModel)]="editJob.companyName"
+                            class="form-control"><br />
+                        Enter Application Deadline: <input type="date" name="applicationDeadline" [(ngModel)]="editJob.applicationDeadline"
+                            class="form-control"><br />
+                        Enter Category Name: <input type="text" name="categoryName" [(ngModel)]="editJob.categoryName"
+                            class="form-control"><br />
+                        Enter Description: <input type="text" name="description" [(ngModel)]="editJob.description"
+                            class="form-control"><br />
+                        Enter Email Id: <input type="text" name="emailId" disabled [(ngModel)]="editJob.emailId"
+                            class="form-control"><br />
+                        Enter Experience Details: <input type="text" name="experience_details" [(ngModel)]="editJob.experience_details"
+                            class="form-control"><br />
+                        Enter Job Location : <input type="text" name="jobLocation" [(ngModel)]="editJob.jobLocation"
+                            class="form-control"><br />
+
+                        Enter Job Title: <input type="text" name="jobTitle" [(ngModel)]="editJob.jobTitle"
+                            class="form-control"><br />
+                        Enter Job Type: <input type="text" name="jobType" [(ngModel)]="editJob.jobType"
+                            class="form-control"><br />
+                        Enter Min Educational : <input type="text" name="min_Educational_req" [(ngModel)]="editJob.min_Educational_req"
+                            class="form-control"><br />
+                        Enter No.Of Vacancies: <input type="text" name="noOfVacancies" [(ngModel)]="editJob.noOfVacancies"
+                            class="form-control"><br />
+                        Enter Salary Range: <input type="text" name="salaryRange" [(ngModel)]="editJob.salaryRange"
+                            class="form-control"><br />
+                        Enter Skills Required : <input type="text" name="skillsRequired" [(ngModel)]="editJob.skillsRequired"
+                            class="form-control"><br />
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateJob()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
+
